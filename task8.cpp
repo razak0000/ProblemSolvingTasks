@@ -1,20 +1,29 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-
-void sum_of_n(int n){
-    int sum = 0;
-    for(int i = 1; i <= n; i++){
-        sum += i;
+int isprime(int n){
+    if(n==0 || n==1){
+        return false;
     }
-  cout << " SUM OF " << n << " natural number is : " << sum ;
-          
-    
+    for(int i=2;i<=5;i++){
+        if(n%i==0){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    return true;
 }
 
 int main(){
     int n;
-    cout << "enter a number to find it's SUM OF N natural number : ";
+    cout << "enter a number to find it is prime number or not : ";
     cin >> n;
-    sum_of_n(n);
+    if(isprime(n)){
+        cout << n << " is a prime number";
+    }
+    else{
+        cout << n << " is not a prime number";
+    }
 }
