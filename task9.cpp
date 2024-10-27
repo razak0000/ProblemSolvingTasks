@@ -1,27 +1,23 @@
-#include<iostream>
+#include <iostream>
+
 using namespace std;
 
 
-void square_of_eachin_n(int n){
-    int sum = 0;
-    int sqr;
-    int temp = n;
-    while (temp!=0) 
-    {
-        int r = temp%10;
-        int sqr = r * r ;
-        sum = sum + sqr;
-        temp = temp/10;
-
-    }
-  cout << " SQUARE OF " << n << " DIGIT is : " << sum ;
-          
-    
+void findfibonnacci(int n){
+     int num1 = 0;
+     int num2 = 1;
+     int sum;
+     for(int i=0;i<n;i++){
+        sum = num1 + num2;
+        num2 = num1;
+        num1 = sum;
+     }
+     cout<<sum;
 }
 
 int main(){
     int n;
-    cout << "enter a number to find it's SUM OF N natural number : ";
+    cout << "enter a number to find its fibonacci number ";
     cin >> n;
-    square_of_eachin_n(n);
+    findfibonnacci(n);
 }
